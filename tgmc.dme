@@ -1508,6 +1508,8 @@
 #include "code\modules\vehicles\multitile\tank.dm"
 #include "code\modules\vehicles\multitile\tankvendor.dm"
 #include "code\modules\xenomorph\xeno_structures.dm"
+#include "code\upp\doctor_alex\map_decor.dm"
+#include "code\upp\doctor_alex\weapons.dm"
 #include "interface\interface.dm"
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
