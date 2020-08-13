@@ -10,7 +10,7 @@
 	force_wielded = 45
 	w_class = 4
 	sharp = IS_SHARP_ITEM_BIG
-	flags_equip_slot = ITEM_SLOT_BACK
+	flags_equip_slot = ITEM_SLOT_BACK|ITEM_SLOT_BELT
 
 /obj/item/weapon/twohanded/hammer/attack(var/mob/living/M, mob/user)
     ..()
@@ -27,7 +27,7 @@
 	force_wielded = 45
 	w_class = 4
 	sharp = IS_SHARP_ITEM_BIG
-	flags_equip_slot = ITEM_SLOT_BACK
+	flags_equip_slot = ITEM_SLOT_BACK|ITEM_SLOT_BELT
 
 /obj/item/weapon/twohanded/hammer/true/attack(var/mob/living/M, mob/user)
     ..()
