@@ -474,6 +474,8 @@
 		return FALSE
 	if(is_banned_from(ckey, job.title))
 		return FALSE
+	if(check_faction(ckey, job.title))
+		return FALSE
 	if(QDELETED(src))
 		return FALSE
 	if(!job.player_old_enough(client))
@@ -483,3 +485,13 @@
 	if(latejoin && !job.special_check_latejoin(client))
 		return FALSE
 	return TRUE
+
+proc/check_faction(player_ckey, roles)
+	var/client/C = GLOB.directory[player_ckey]
+	if(!C.prefs.faction)
+		if(roles != UPP_LEADER && roles != UPP_HEAVY && roles != UPP_MEDIC && roles != UPP_PRIVATE)
+			return TRUE
+	if(C.prefs.faction)
+		if(roles != SOM_LEADER && roles != SOM_HEAVY && roles != SOM_MEDIC && roles != SOM_PRIVATE)
+			return TRUE
+	return FALSE

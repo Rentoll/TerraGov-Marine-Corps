@@ -11,6 +11,7 @@
 // END_PREFERENCES
 // BEGIN_INCLUDE
 #include "_maps\_basemap.dm"
+#include "_maps\map_files\debugdalus\tgs_debugdalus.dmm"
 #include "_maps\map_files\generic\Admin_Level.dmm"
 #include "code\_compile_options.dm"
 #include "code\world.dm"
@@ -325,10 +326,12 @@
 #include "code\datums\jobs\job\sectoid.dm"
 #include "code\datums\jobs\job\shipside.dm"
 #include "code\datums\jobs\job\sonsofmars.dm"
+#include "code\datums\jobs\job\sonsofship.dm"
 #include "code\datums\jobs\job\survivor.dm"
 #include "code\datums\jobs\job\terragov.dm"
 #include "code\datums\jobs\job\upp.dm"
 #include "code\datums\jobs\job\upp_commando.dm"
+#include "code\datums\jobs\job\uppshipside.dm"
 #include "code\datums\jobs\job\xenomorph.dm"
 #include "code\datums\keybinding\_defines.dm"
 #include "code\datums\keybinding\_keybindings.dm"
