@@ -40,6 +40,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/windowflashing = TRUE
 	var/focus_chat = FALSE
 	var/clientfps = 0
+	var/faction = FALSE
 
 	// Custom Keybindings
 	var/list/key_bindings = null
@@ -138,10 +139,20 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	// We don't have a savefile or we failed to load them
 	random_character()
+	addtimer(CALLBACK(src, .proc/faction_setup, C), 5 SECONDS)
 	menuoptions = list()
 	key_bindings = deepCopyList(GLOB.hotkey_keybinding_list_by_key) // give them default keybinds and update their movement keys
 	C.update_movement_keys(src)
 
+///////////////////////////////////////////////
+
+/datum/preferences/proc/faction_setup(client/C)
+	var/choice = tgalert(C, "Are you a 'English' or 'Russian' player?", "Setup faction", "English(SOM)", "Russian(UPP)")
+	focus_chat = (choice == "English(SOM)")
+	faction = (!focus_chat) ? FALSE : TRUE // SOM - TRUE, UPP - FALSE user.ckey
+	save_preferences()
+
+///////////////////////////////////////////////
 
 /datum/preferences/can_interact(mob/user)
 	return TRUE
@@ -415,6 +426,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(is_banned_from(user.ckey, rank))
 				HTML += "<font color=red>[rank]</font></td><td><a href='?_src_=prefs;preference=bancheck;role=[rank]'> BANNED</a></td></tr>"
 				continue
+
+//////////////////////////////////////////////
+			if(!faction)
+				if(rank != UPP_LEADER && rank != UPP_HEAVY && rank != UPP_MEDIC && rank != UPP_PRIVATE)
+					HTML += "<font color=red>[rank]</font></td><td><a href='?_src_=prefs;preference=bancheck;role=[rank]'> BANNED</a></td></tr>"
+					continue
+			if(faction)
+				if(rank != SOM_LEADER && rank != SOM_HEAVY && rank != SOM_MEDIC && rank != SOM_PRIVATE)
+					HTML += "<font color=red>[rank]</font></td><td><a href='?_src_=prefs;preference=bancheck;role=[rank]'> BANNED</a></td></tr>"
+					continue
+/////////////////////////////////////////////
+
 			var/required_playtime_remaining = job.required_playtime_remaining(user.client)
 			if(required_playtime_remaining)
 				HTML += "<font color=red>[rank]</font></td><td><font color=red> \[ [get_exp_format(required_playtime_remaining)] as [job.get_exp_req_type()] \] </font></td></tr>"

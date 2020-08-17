@@ -5,6 +5,7 @@
 	votable = FALSE
 
 	valid_job_types = list(
+	/*
 		/datum/job/terragov/command/captain = 1,
 		/datum/job/terragov/command/fieldcommander = 1,
 		/datum/job/terragov/command/staffofficer = 4,
@@ -22,7 +23,16 @@
 		/datum/job/terragov/squad/corpsman = 8,
 		/datum/job/terragov/squad/smartgunner = 4,
 		/datum/job/terragov/squad/leader = 4,
-		/datum/job/terragov/squad/standard = -1
+		/datum/job/terragov/squad/standard = -1,*/
+
+		/datum/job/uppshipside/leader = 1,
+		/datum/job/uppshipside/heavy = 4,
+		/datum/job/uppshipside/medic = 16,
+		/datum/job/uppshipside/private = -1,
+		/datum/job/somshipside/leader = 1,
+		/datum/job/somshipside/heavy = 4,
+		/datum/job/somshipside/medic = 16,
+		/datum/job/somshipside/private = -1
 	)
 
 /datum/game_mode/extended/announce()

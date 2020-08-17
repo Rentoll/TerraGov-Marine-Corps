@@ -97,3 +97,39 @@
 /obj/effect/landmark/start/job/xenomorph
 	icon_state = "xeno_spawn"
 	job = /datum/job/xenomorph
+
+//==============================================
+
+/obj/effect/landmark/start/job/uppprivate
+	icon_state = "PFC"
+	job = /datum/job/uppshipside/private
+
+/obj/effect/landmark/start/job/uppmedic
+	icon_state = "HM"
+	job = /datum/job/uppshipside/medic
+
+/obj/effect/landmark/start/job/uppheavy
+	icon_state = "Spec"
+	job = /datum/job/uppshipside/heavy
+
+/obj/effect/landmark/start/job/uppleader
+	icon_state = "SL"
+	job = /datum/job/uppshipside/leader
+
+//==============================================
+
+/obj/effect/landmark/start/job/somprivate
+	icon_state = "PFC"
+	job = /datum/job/somshipside/private
+
+/obj/effect/landmark/start/job/sommedic
+	icon_state = "HM"
+	job = /datum/job/somshipside/medic
+
+/obj/effect/landmark/start/job/somheavy
+	icon_state = "Spec"
+	job = /datum/job/somshipside/heavy
+
+/obj/effect/landmark/start/job/somleader
+	icon_state = "SL"
+	job = /datum/job/somshipside/leader
