@@ -468,6 +468,59 @@
 /obj/machinery/door/airlock/mainship/medical/glass/research
 	req_access = list(ACCESS_MARINE_RESEARCH)
 
+//////////////////////////////////////////////////
+//UPP SHIP AIRLOCKS
+/obj/machinery/door/airlock/mainship/upp
+	name = "\improper UPP Squad Preparations"
+	icon = 'icons/obj/doors/mainship/prepdoor.dmi'
+	req_access = list(ACCESS_UPP_PREPROOM)
+	req_one_access = null
+	opacity = FALSE
+	glass = TRUE
+	dir = WEST
+
+/obj/machinery/door/airlock/mainship/upp/medic
+	name = "\improper UPP Medic Preparations"
+	icon = 'icons/obj/doors/mainship/prepdoor.dmi'
+	req_access = list(ACCESS_UPP_MEDIC)
+
+/obj/machinery/door/airlock/mainship/upp/heavy
+	name = "\improper UPP Heavy Preparations"
+	icon = 'icons/obj/doors/mainship/prepdoor.dmi'
+	req_access = list(ACCESS_UPP_HEAVY)
+
+/obj/machinery/door/airlock/mainship/upp/leader
+	name = "\improper UPP Leader Preparations"
+	icon = 'icons/obj/doors/mainship/prepdoor.dmi'
+	req_access = list(ACCESS_UPP_LEADER)
+
+//SOM SHIP AIRLOCKS
+/obj/machinery/door/airlock/mainship/som
+	name = "\improper SOM Squad Preparations"
+	icon = 'icons/obj/doors/mainship/secdoor_glass.dmi'
+	req_access = list(ACCESS_SOM_PREPROOM)
+	req_one_access = null
+	opacity = FALSE
+	glass = TRUE
+	dir = WEST
+
+/obj/machinery/door/airlock/mainship/som/medic
+	name = "\improper SOM Medic Preparations"
+	icon = 'icons/obj/doors/mainship/secdoor_glass.dmi'
+	req_access = list(ACCESS_SOM_MEDIC)
+
+/obj/machinery/door/airlock/mainship/som/heavy
+	name = "\improper SOM Heavy Preparations"
+	icon = 'icons/obj/doors/mainship/secdoor_glass.dmi'
+	req_access = list(ACCESS_SOM_HEAVY)
+
+/obj/machinery/door/airlock/mainship/som/leader
+	name = "\improper SOM Leader Preparations"
+	icon = 'icons/obj/doors/mainship/secdoor_glass.dmi'
+	req_access = list(ACCESS_SOM_LEADER)
+
+//////////////////////////////////////////////////
+
 /obj/machinery/door/airlock/mainship/research
 	name = "\improper Research Airlock"
 	icon = 'icons/obj/doors/mainship/medidoor.dmi'
